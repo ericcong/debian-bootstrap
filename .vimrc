@@ -62,6 +62,9 @@ set autoread
 set formatoptions+=n
 set magic
 set number
+au BufWritePre * :set binary | set noeol
+au BufWritePost * :set nobinary | set eol
+
 
 " Searching
 set incsearch
