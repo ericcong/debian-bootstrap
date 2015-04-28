@@ -1,0 +1,55 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed.
+ *
+ * If you are unfamiliar with LESS, you can read more about it here:
+ * http://www.lesscss.org
+ */
+
+.tree-view {
+
+}
+
+// style the background and foreground colors on the atom-text-editor-element
+// itself
+atom-text-editor {
+
+}
+
+// To style other content in the text editor's shadow DOM, use the ::shadow
+// expression
+atom-text-editor::shadow .cursor {
+
+}
+
+.markdown-preview {
+    h1, h2, h3, h4, h5, h6 {
+        font-family: CMU Serif Bold Extended Roman;
+        font-weight: bold;
+    }
+    p {
+        font-family: CMU Serif Roman;
+        font-size: 1.1em;
+    }
+    strong {
+        font-family: CMU Serif Bold Extended Roman;
+    }
+    i {
+        font-family: CMU Serif Italic;
+    }
+    h1, h2 {
+        border-style: none;
+    }
+    h1, .info {
+        text-align: center;
+    }
+    .info {
+        font-family: CMU Serif Roman;
+        font-size: 1.3em;
+    }
+    hr {
+        background: none;
+    }
+}
