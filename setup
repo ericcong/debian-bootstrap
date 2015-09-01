@@ -1,2 +1,7 @@
-cp ./.* ~/
+cp .vimrc ~/
+cp .gvimrc ~/
+cp .tmux.conf ~/
+cp .bash_profile ~/
+
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+mkdir ~/.vim/tmp/
