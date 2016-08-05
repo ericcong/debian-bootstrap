@@ -1,7 +1,17 @@
-cp .vimrc ~/
-cp .gvimrc ~/
-cp .tmux.conf ~/
-cp .bash_profile ~/
+#!/usr/bin/env bash
+
+apt update && apt upgrade && apt install $(grep -vE "^\s*#" packages  | tr "\n" " ")
+
+cp vimrc ~/.vimrc
+cp gvimrc ~/.gvimrc
+cp cvimrc ~/.cvimrc
+cp bashrc ~/.bashrc
+
+mkdir ~/.i3
+cp i3 ~/.i3/config
+cp i3status ~/.i3/i3status
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-mkdir ~/.vim/tmp/
+mkdir ~/.vim/tmp
+
+mkdir ~/.bin

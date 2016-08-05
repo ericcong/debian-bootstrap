@@ -8,14 +8,8 @@ call vundle#rc()
 
 Bundle "gmarik/Vundle.vim"
 Bundle "ervandew/supertab"
-Bundle "tpope/vim-fugitive"
 Bundle "kien/ctrlp.vim"
-Bundle "kchmck/vim-coffee-script"
 Bundle "altercation/vim-colors-solarized"
-Bundle "mattn/emmet-vim"
-Bundle "Lokaltog/vim-easymotion"
-Bundle "ericcong/vimxy"
-Bundle "nicoraffo/conque"
 
 " ----------------------------- "
 
@@ -41,8 +35,8 @@ set backspace=indent,eol,start
 set whichwrap+=<,>,[,],h,l
 set history=1024
 set iskeyword+=_,$,@,%,#,-
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set smarttab
 set expandtab
 set smartindent
@@ -79,7 +73,7 @@ endif
 " Multi byte files support
 if has("multi_byte")
   set termencoding=utf-8
-  set fileencodings=utf-8,GB18030,gbk,big5,chinese,ucs-bom
+  set fileencodings=utf-8
   set fileencoding=utf-8
   set ambiwidth=double
 endif
@@ -96,20 +90,8 @@ noremap <silent> <C-w><Up> :leftabove new<cr>
 noremap <silent> <C-w><Right> :rightbelow vnew<cr>
 noremap <C-w><C-w> <C-w><C-p>
 
-" Tab related hotkeys
-noremap <C-Tab> gt
-noremap <C-S-Tab> gT
-
-" Replace ':' with ';' 
-noremap ; :
-noremap <leader>; ;
-
 " Fast turn off search highlight
 noremap <silent> <leader>/ :nohlsearch<CR><C-l>
-
-" Changing page with left and right
-noremap <Tab> <C-d>
-noremap <S-Tab> <C-u>
 
 " Natural line navigation
 noremap <Down> gj
@@ -124,23 +106,8 @@ noremap <silent> <leader>p :set paste<CR>"+p:set nopaste<CR>
 " Auto update the diff view
 autocmd BufWritePost * if &diff == 1 | diffupdate | endif
 
-" ------------
-
-" Fugitive
-autocmd BufReadPost fugitive://* set bufhidden=delete
-
-" Easy motion
-map <Space> <Plug>(easymotion-bd-w)
-
 " Super Tab
 let g:SuperTabDefaultCompletionType = 'context'
-
-" Conque
-nnoremap <silent> <leader>x :ConqueTermVSplit bash --login<CR>
-let g:ConqueTerm_CWInsert = 1
-let g:ConqueTerm_InsertOnEnter = 1
-let g:ConqueTerm_CloseOnEnd = 1
-
 
 " Ctrlp
 let g:ctrlp_cache_dir = $HOME.'/.vim/tmp/ctrlp/'

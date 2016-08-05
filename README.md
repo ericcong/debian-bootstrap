@@ -1,4 +1,4 @@
-dotfiles
+debian-bootstrap
 ========
 
-My dot files
+Install packages and apply dot files.

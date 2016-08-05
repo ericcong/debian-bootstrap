@@ -1,0 +1,19 @@
+set noautofocus
+set numerichints
+set typelinkhints
+set autohidecursor
+set showtabindices
+let barposition = "bottom"
+call resetScrollFocus
+map <C-d> scrollPageDown
+map <C-u> scrollPageUp
+map <C-f> scrollFullPageDown
+map u goBack
+map <C-r> goForward
+map <C-l> reloadTab
+map ` goToTab
+map ~ lastUsedTab
+map b :bookmarks!<SPACE>
+map + zoomPageIn
+map - zoomPageOut
+map = zoomOrig
