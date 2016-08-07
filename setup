@@ -6,6 +6,7 @@ cp vimrc ~/.vimrc
 cp gvimrc ~/.gvimrc
 cp cvimrc ~/.cvimrc
 cp bashrc ~/.bashrc
+cp inputrc ~/.inputrc
 
 mkdir ~/.i3
 cp i3 ~/.i3/config
