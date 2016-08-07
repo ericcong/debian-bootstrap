@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo apt update && sudo apt upgrade && sudo apt install -f $(grep -vE "^\s*#" packages  | tr "\n" " ")
+sudo apt update && sudo apt upgrade -y && sudo apt install -y $(grep -vE "^\s*#" apt-packages  | tr "\n" " ")
 
 cp vimrc ~/.vimrc
 cp gvimrc ~/.gvimrc
@@ -10,7 +10,7 @@ cp inputrc ~/.inputrc
 
 mkdir ~/.i3
 cp i3 ~/.i3/config
-cp i3status ~/.i3/i3status
+cp i3status ~/.i3/i3status.conf
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 mkdir ~/.vim/tmp

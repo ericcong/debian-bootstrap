@@ -16,7 +16,10 @@ shopt -s checkwinsize
 PS1='\n\w \$ '
 
 PATH=$PATH:$HOME/.bin
+
 set -o vi
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 alias ll='ls -lh'
 alias lll='ls -lah'
