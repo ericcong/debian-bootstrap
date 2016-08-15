@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-sudo apt update && sudo apt upgrade -y && sudo apt install -y $(grep -vE "^\s*#" apt-packages  | tr "\n" " ")
-
 cp vimrc ~/.vimrc
 cp gvimrc ~/.gvimrc
 cp cvimrc ~/.cvimrc
