@@ -1,8 +1,5 @@
-# Compton
-exec --no-startup-id compton -cCGb --backend glx --vsync opengl
-
 # No title bar
-new_window none
+new_window pixel 1
 
 # Disable mouse related functions
 focus_follows_mouse no
@@ -18,7 +15,7 @@ set $R0 #dc322f
 set $Y0 #b58900
 
 # Background
-exec_always --no-startup-id xsetroot -solid '$B0'
+exec_always --no-startup-id xsetroot -solid '$B1'
 
 # class                  border   bg       text     indicator
 client.focused           $B1  $G2  $G0  $G2
@@ -54,6 +51,10 @@ floating_modifier $mod
 # Open Terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# Start a floating terminal
+bindsym $mod+Shift+Return exec --no-startup-id urxvt -name "floating_urxvt"
+for_window [class="URxvt" instance="floating_urxvt$"] floating enable
+
 # Kill focused window
 bindsym $mod+q kill
 
@@ -70,7 +71,7 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+L Move right
 
 # Open dmenu
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec i3-dmenu-desktop
 
 # Split orientation
 bindsym $mod+v split v
@@ -131,4 +132,22 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Lock
-bindsym $mod+control+l exec gnome-screensaver-command --lock
+bindsym $mod+control+l exec i3lock -c 000000 -n
+
+# Hide border on the edge
+hide_edge_borders both
+
+# Volume control
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Suspend
+bindsym XF86PowerOff exec systemctl suspend
+
+# Float pop-up windows
+for_window [window_role="pop-up"] floating enable
